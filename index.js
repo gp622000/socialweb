@@ -3,7 +3,8 @@ const express = require('express');
 const app = express();
 const port = 8000;
 
-
+//use expres router
+app.use('/',require('./routes/index'));
 
 // `` is called backtic
 // this process is known as interpolation.
