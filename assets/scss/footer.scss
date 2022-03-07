@@ -1,0 +1,23 @@
+#layout-footer {
+  color: white;
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  padding: 5px 10px;
+  display: flex;
+  justify-content: flex-start;
+  //for shifting the footer downward.
+
+  background: grey;
+  .footer-nav {
+    ul {
+      list-style: none;
+      display: flex;
+      li {
+        padding-right: 5px;
+      }
+    }
+  }
+}

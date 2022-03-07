@@ -1,0 +1,43 @@
+#layout-header{
+    nav{
+        // it will place all the div container to row.
+        display: flex;
+        //items are evenly distributed in the line; first item is on the start line, last item on the end line
+        justify-content: space-between;
+        // space-around: items are evenly distributed in the line with equal space around them. Note that visually the spaces aren’t equal, since all the items have equal space on both sides. The first item will have one unit of space against the container edge, but two units of space between the next item because that next item has its own spacing that applies
+        //space-evenly: items are distributed so that the spacing between any two items (and the space to the edges) is equal.
+        padding: 0 10px;
+        background: rgb(51, 14, 85);
+        color: white;
+        box-shadow: 1px 1px 1px 1px lightgrey;
+        text-decoration: none;
+        
+        .mini-logo{
+            p{
+                margin: 5px;
+                font-size: 1.4rem;
+                font-weight: bold;
+                a{
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .auth-links{
+            ul{
+                margin: 5% 5px;
+                display: flex; 
+                list-style-type: none;   
+            }
+            li{
+                margin-right: 10px;
+                a{
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+        }
+
+    }
+}
