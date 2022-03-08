@@ -8,10 +8,18 @@ module.exports.create = function (req, res) {
       // which we will find in the passport-local-authentication setAuthenticated User.
       user: req.user._id,
     },
-    function (err, Post) {
+    function (err, post) {
       if (err) {
         req.flash("error", err);
         return;
+      }
+      if (req.xhr) {
+        return res.status(200).json({
+          data: {
+            post: post,
+          },
+          message: "Post created",
+        });
       }
       req.flash("success", "Post published");
       return res.redirect("back");
@@ -25,6 +33,14 @@ module.exports.destroy = function (req, res) {
     if (post.user == req.user.id) {
       post.remove();
       Comment.deleteMany({ post: req.params.id }, function (err) {
+        if (req.xhr) {
+          return res.status(200).json({
+            data: {
+              post_id: req.params.id,
+            },
+            message: "Post deleted",
+          });
+        }
         req.flash("success", "Post and associated comments deleted");
         return res.redirect("back");
       });
