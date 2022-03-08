@@ -10,7 +10,6 @@ module.exports.profile = function (req, res) {
 };
 
 module.exports.update = function (req, res) {
-  console.log(req.user);
   if (req.user._id == req.params.id) {
     User.findByIdAndUpdate(req.params.id, req.body, function (err, user) {
       return res.redirect("back");
