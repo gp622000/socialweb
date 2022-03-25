@@ -1,4 +1,7 @@
 <link rel="stylesheet" href="/css/user_profile.css" />
+
+<img src="<%= user.avatar %>" alt="<%= user.name %>" width="100" />
+
 <h1>Social web / Profile Page</h1>
 <% if(user.id == profile_user.id) { %>
 <form
@@ -20,7 +23,7 @@
     value="<%= profile_user.email%>"
     required
   />
-  <input type="file" name="avtar" placeholder="Profile Picture" />
+  <input type="file" name="avatar" placeholder="Profile Picture" />
   <input type="submit" value="Update" />
 </form>
 <%}else{%>
